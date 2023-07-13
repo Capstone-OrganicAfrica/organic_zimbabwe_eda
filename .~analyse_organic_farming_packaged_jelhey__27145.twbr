@@ -12390,7 +12390,25 @@
       <column-instance column='[product]' derivation='None' name='[none:product:nk]' pivot='key' type='nominal' />
       <column-instance column='[reason_dropped_out]' derivation='None' name='[none:reason_dropped_out:nk]' pivot='key' type='nominal' />
       <column-instance column='[sex (all_farmers)]' derivation='None' name='[none:sex (all_farmers):nk]' pivot='key' type='nominal' />
+      <column-instance column='[date_contracted]' derivation='Count' name='[pcto:cnt:date_contracted:qk:2]' pivot='key' type='quantitative'>
+        <table-calc ordering-type='Columns' type='PctTotal' />
+      </column-instance>
+      <column-instance column='[date_contracted]' derivation='Count' name='[pcto:cnt:date_contracted:qk:4]' pivot='key' type='quantitative'>
+        <table-calc ordering-type='Table' type='PctTotal' />
+      </column-instance>
       <column-instance column='[date_contracted]' derivation='Count' name='[pcto:cnt:date_contracted:qk]' pivot='key' type='quantitative'>
+        <table-calc ordering-type='Rows' type='PctTotal' />
+      </column-instance>
+      <column-instance column='[date_dropped_out]' derivation='Count' name='[pcto:cnt:date_dropped_out:qk:2]' pivot='key' type='quantitative'>
+        <table-calc ordering-type='Columns' type='PctTotal' />
+      </column-instance>
+      <column-instance column='[date_dropped_out]' derivation='Count' name='[pcto:cnt:date_dropped_out:qk:4]' pivot='key' type='quantitative'>
+        <table-calc ordering-type='Table' type='PctTotal' />
+      </column-instance>
+      <column-instance column='[date_dropped_out]' derivation='Count' name='[pcto:cnt:date_dropped_out:qk:5]' pivot='key' type='quantitative'>
+        <table-calc ordering-field='[federated.1rg8k6n171pekt11xnkk11sa2b3i].[date_contracted]' ordering-type='Field' type='PctTotal' />
+      </column-instance>
+      <column-instance column='[date_dropped_out]' derivation='Count' name='[pcto:cnt:date_dropped_out:qk]' pivot='key' type='quantitative'>
         <table-calc ordering-type='Rows' type='PctTotal' />
       </column-instance>
       <column-instance column='[Calculation_1071364174427496460]' derivation='Sum' name='[sum:Calculation_1071364174427496460:qk]' pivot='key' type='quantitative' />
@@ -23589,6 +23607,12 @@
               <bucket>&quot;[federated.1rg8k6n171pekt11xnkk11sa2b3i].[cum:cnt:date_contracted:qk]&quot;</bucket>
             </map>
             <map to='#256f3d'>
+              <bucket>&quot;[federated.1rg8k6n171pekt11xnkk11sa2b3i].[pcto:cnt:date_contracted:qk:2]&quot;</bucket>
+            </map>
+            <map to='#256f3d'>
+              <bucket>&quot;[federated.1rg8k6n171pekt11xnkk11sa2b3i].[pcto:cnt:date_contracted:qk:4]&quot;</bucket>
+            </map>
+            <map to='#256f3d'>
               <bucket>&quot;[federated.1rg8k6n171pekt11xnkk11sa2b3i].[pcto:cnt:date_contracted:qk]&quot;</bucket>
             </map>
             <map to='#428f4d'>
@@ -23746,6 +23770,18 @@
             </map>
             <map to='#8ed07f'>
               <bucket>&quot;[federated.1rg8k6n171pekt11xnkk11sa2b3i].[cum:cnt:date_dropped_out:qk]&quot;</bucket>
+            </map>
+            <map to='#8ed07f'>
+              <bucket>&quot;[federated.1rg8k6n171pekt11xnkk11sa2b3i].[pcto:cnt:date_dropped_out:qk:2]&quot;</bucket>
+            </map>
+            <map to='#8ed07f'>
+              <bucket>&quot;[federated.1rg8k6n171pekt11xnkk11sa2b3i].[pcto:cnt:date_dropped_out:qk:4]&quot;</bucket>
+            </map>
+            <map to='#8ed07f'>
+              <bucket>&quot;[federated.1rg8k6n171pekt11xnkk11sa2b3i].[pcto:cnt:date_dropped_out:qk:5]&quot;</bucket>
+            </map>
+            <map to='#8ed07f'>
+              <bucket>&quot;[federated.1rg8k6n171pekt11xnkk11sa2b3i].[pcto:cnt:date_dropped_out:qk]&quot;</bucket>
             </map>
             <map to='#931b86'>
               <bucket>&quot;[federated.1rg8k6n171pekt11xnkk11sa2b3i].[avg:hm_over_60_years_female:qk]&quot;</bucket>
@@ -26460,20 +26496,20 @@
             <column-instance column='[date_contracted]' derivation='Count' name='[cum:cnt:date_contracted:qk]' pivot='key' type='quantitative'>
               <table-calc aggregation='Sum' ordering-type='Rows' type='CumTotal' />
             </column-instance>
-            <column-instance column='[date_dropped_out]' derivation='Count' name='[cum:cnt:date_dropped_out:qk]' pivot='key' type='quantitative'>
-              <table-calc aggregation='Sum' ordering-type='Rows' type='CumTotal' />
-            </column-instance>
             <column caption='Date Contracted' datatype='datetime' name='[date_contracted]' role='dimension' type='ordinal' />
             <column caption='Date Dropped Out' datatype='datetime' name='[date_dropped_out]' role='dimension' type='ordinal' />
-            <column-instance column='[date_contracted]' derivation='Count' name='[pcto:cnt:date_contracted:qk]' pivot='key' type='quantitative'>
-              <table-calc ordering-type='Rows' type='PctTotal' />
+            <column-instance column='[date_contracted]' derivation='Count' name='[pcto:cnt:date_contracted:qk:4]' pivot='key' type='quantitative'>
+              <table-calc ordering-type='Table' type='PctTotal' />
+            </column-instance>
+            <column-instance column='[date_dropped_out]' derivation='Count' name='[pcto:cnt:date_dropped_out:qk:5]' pivot='key' type='quantitative'>
+              <table-calc ordering-field='[federated.1rg8k6n171pekt11xnkk11sa2b3i].[date_contracted]' ordering-type='Field' type='PctTotal' />
             </column-instance>
             <column-instance column='[date_contracted]' derivation='Year' name='[yr:date_contracted:ok]' pivot='key' type='ordinal' />
           </datasource-dependencies>
           <filter class='categorical' column='[federated.1rg8k6n171pekt11xnkk11sa2b3i].[:Measure Names]'>
             <groupfilter function='union' user:op='manual'>
-              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.1rg8k6n171pekt11xnkk11sa2b3i].[pcto:cnt:date_contracted:qk]&quot;' />
-              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.1rg8k6n171pekt11xnkk11sa2b3i].[cum:cnt:date_dropped_out:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.1rg8k6n171pekt11xnkk11sa2b3i].[pcto:cnt:date_contracted:qk:4]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.1rg8k6n171pekt11xnkk11sa2b3i].[pcto:cnt:date_dropped_out:qk:5]&quot;' />
             </groupfilter>
           </filter>
           <manual-sort column='[federated.1rg8k6n171pekt11xnkk11sa2b3i].[:Measure Names]' direction='ASC'>
@@ -30612,7 +30648,7 @@
       </viewpoint>
       <simple-id uuid='{6C03329B-BCDD-4E68-82C6-0A274EAD0235}' />
     </window>
-    <window class='worksheet' name='Sheet 49'>
+    <window class='worksheet' maximized='true' name='Sheet 49'>
       <cards>
         <edge name='left'>
           <strip size='160'>
@@ -30644,7 +30680,7 @@
       </viewpoint>
       <simple-id uuid='{40D6B8F9-2C41-4026-B78C-AF2968EA897F}' />
     </window>
-    <window class='worksheet' maximized='true' name='Sheet 49 (2)'>
+    <window class='worksheet' name='Sheet 49 (2)'>
       <cards>
         <edge name='left'>
           <strip size='160'>
