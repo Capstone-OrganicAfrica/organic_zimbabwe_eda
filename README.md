@@ -9,12 +9,12 @@ This project aims to analyze data related to farmers in Africa and product price
 The data used in this analysis is sourced from the company's internal database, which includes records of farmer transactions, product quantities, prices, and additional relevant information. The dataset also incorporates supplementary data from agricultural surveys and market reports, providing a comprehensive understanding of the local farming ecosystem.
 
 ## Data Analysis Approach
-We employed a combination of descriptive statistics, and data visualization to analyze the company's data. Key analysis methods include data cleaning, exploratory data analysis, and trend analysis. Python was used as the primary programming language, leveraging libraries such as pandas, and Matplotlib for data manipulation and analysis.
+We employed a combination of descriptive statistics, and data visualization to analyze the company's data. Key analysis methods include data cleaning, exploratory data analysis, and trend analysis. Python, SQL, pandas, and Matplotlib were used for data manipulation and analysis.
 
 ## Folder Structure
 - `data`: Contains the raw and processed datasets used in the analysis.
 - `notebooks`: Contains Jupyter notebooks with detailed explanations of the analysis steps and results.
-- `sql`:Includes Python scripts used for data cleaning and analysis
+- `sql`:Includes SQL scripts used for data cleaning and analysis.
 - `tableau`: Includes dashboards.
 
 ## Results and Visualizations
@@ -28,7 +28,7 @@ We employed a combination of descriptive statistics, and data visualization to a
 ![Financial Impact](dashboards/financial-impact.png)
 
 ## Tech Stack
+* Python (pandas, matplotlib)
 * SQL
 * Tableau
 * Figma
-* Python (pandas, matplotlib)
