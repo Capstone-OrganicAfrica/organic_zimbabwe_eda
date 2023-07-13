@@ -31,4 +31,3 @@ We employed a combination of descriptive statistics, and data visualization to a
 * Python (pandas, matplotlib)
 * SQL
 * Tableau
-* Figma
