@@ -138,3 +138,5 @@ dmypy.json
 
 # data folders added in notebook
 data/
+data/ReleasableAircraft
+data/ReleasableAircraft/
