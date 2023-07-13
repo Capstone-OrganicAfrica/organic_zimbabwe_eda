@@ -1,0 +1,724 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20231.23.0511.1508                               -->
+<workbook original-version='18.1' source-build='2023.1.2 (20231.23.0511.1508)' source-platform='mac' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <_.fcp.AnimationOnByDefault.true...AnimationOnByDefault />
+    <_.fcp.MarkAnimation.true...MarkAnimation />
+    <_.fcp.ObjectModelEncapsulateLegacy.true...ObjectModelEncapsulateLegacy />
+    <_.fcp.ObjectModelTableType.true...ObjectModelTableType />
+    <_.fcp.SchemaViewerObjectModel.true...SchemaViewerObjectModel />
+    <SheetIdentifierTracking />
+    <SortTagCleanup />
+    <WindowsPersistSimpleIdentifiers />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <_.fcp.AnimationOnByDefault.false...style>
+    <_.fcp.AnimationOnByDefault.false..._.fcp.MarkAnimation.true...style-rule element='animation'>
+      <_.fcp.AnimationOnByDefault.false...format attr='animation-on' value='ao-on' />
+    </_.fcp.AnimationOnByDefault.false..._.fcp.MarkAnimation.true...style-rule>
+  </_.fcp.AnimationOnByDefault.false...style>
+  <datasources>
+    <datasource caption='all_farmers (organic_africa.all_farmers) (postgres)' inline='true' name='federated.10movex0dfbz3911rx0os1f1suf4' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='data-analytics-course-2.c8g8r1deus2v.eu-central-1.rds.amazonaws.com' name='postgres.0y2jo0h0cn1m8n1ab2vc51v85jpz'>
+            <connection authentication='username-password' class='postgres' dbname='postgres' one-time-sql='' port='5432' server='data-analytics-course-2.c8g8r1deus2v.eu-central-1.rds.amazonaws.com' username='khatanzayaschmidt' />
+          </named-connection>
+        </named-connections>
+        <_.fcp.ObjectModelEncapsulateLegacy.false...relation connection='postgres.0y2jo0h0cn1m8n1ab2vc51v85jpz' name='all_farmers' table='[organic_africa].[all_farmers]' type='table' />
+        <_.fcp.ObjectModelEncapsulateLegacy.true...relation connection='postgres.0y2jo0h0cn1m8n1ab2vc51v85jpz' name='all_farmers' table='[organic_africa].[all_farmers]' type='table' />
+        <metadata-records>
+          <metadata-record class='column'>
+            <remote-name>org_table</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[org_table]</local-name>
+            <parent-name>[all_farmers]</parent-name>
+            <remote-alias>org_table</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>2147483647</width>
+            <contains-null>true</contains-null>
+            <cast-to-local-type>true</cast-to-local-type>
+            <collation flag='0' name='LEN_RUS' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[all_farmers (organic_africa.all_farmers)_E9A2C36ADC9A4114A32346242F275A82]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>org_table_ind</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[org_table_ind]</local-name>
+            <parent-name>[all_farmers]</parent-name>
+            <remote-alias>org_table_ind</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>19</precision>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[all_farmers (organic_africa.all_farmers)_E9A2C36ADC9A4114A32346242F275A82]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>id</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[id]</local-name>
+            <parent-name>[all_farmers]</parent-name>
+            <remote-alias>id</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>19</precision>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[all_farmers (organic_africa.all_farmers)_E9A2C36ADC9A4114A32346242F275A82]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>og_nr</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[og_nr]</local-name>
+            <parent-name>[all_farmers]</parent-name>
+            <remote-alias>og_nr</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>17</precision>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[all_farmers (organic_africa.all_farmers)_E9A2C36ADC9A4114A32346242F275A82]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>og_code</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[og_code]</local-name>
+            <parent-name>[all_farmers]</parent-name>
+            <remote-alias>og_code</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>2147483647</width>
+            <contains-null>true</contains-null>
+            <cast-to-local-type>true</cast-to-local-type>
+            <collation flag='0' name='LEN_RUS' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[all_farmers (organic_africa.all_farmers)_E9A2C36ADC9A4114A32346242F275A82]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>production_unit</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[production_unit]</local-name>
+            <parent-name>[all_farmers]</parent-name>
+            <remote-alias>production_unit</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>2147483647</width>
+            <contains-null>true</contains-null>
+            <cast-to-local-type>true</cast-to-local-type>
+            <collation flag='0' name='LEN_RUS' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[all_farmers (organic_africa.all_farmers)_E9A2C36ADC9A4114A32346242F275A82]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>area</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[area]</local-name>
+            <parent-name>[all_farmers]</parent-name>
+            <remote-alias>area</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>2147483647</width>
+            <contains-null>true</contains-null>
+            <cast-to-local-type>true</cast-to-local-type>
+            <collation flag='0' name='LEN_RUS' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[all_farmers (organic_africa.all_farmers)_E9A2C36ADC9A4114A32346242F275A82]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ward_nr/name</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[ward_nr/name]</local-name>
+            <parent-name>[all_farmers]</parent-name>
+            <remote-alias>ward_nr/name</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>2147483647</width>
+            <contains-null>true</contains-null>
+            <cast-to-local-type>true</cast-to-local-type>
+            <collation flag='0' name='LEN_RUS' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[all_farmers (organic_africa.all_farmers)_E9A2C36ADC9A4114A32346242F275A82]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>species</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[species]</local-name>
+            <parent-name>[all_farmers]</parent-name>
+            <remote-alias>species</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>2147483647</width>
+            <contains-null>true</contains-null>
+            <cast-to-local-type>true</cast-to-local-type>
+            <collation flag='0' name='LEN_RUS' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[all_farmers (organic_africa.all_farmers)_E9A2C36ADC9A4114A32346242F275A82]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>surname</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[surname]</local-name>
+            <parent-name>[all_farmers]</parent-name>
+            <remote-alias>surname</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>2147483647</width>
+            <contains-null>true</contains-null>
+            <cast-to-local-type>true</cast-to-local-type>
+            <collation flag='0' name='LEN_RUS' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[all_farmers (organic_africa.all_farmers)_E9A2C36ADC9A4114A32346242F275A82]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>first_names</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[first_names]</local-name>
+            <parent-name>[all_farmers]</parent-name>
+            <remote-alias>first_names</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>2147483647</width>
+            <contains-null>true</contains-null>
+            <cast-to-local-type>true</cast-to-local-type>
+            <collation flag='0' name='LEN_RUS' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[all_farmers (organic_africa.all_farmers)_E9A2C36ADC9A4114A32346242F275A82]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>sex</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[sex]</local-name>
+            <parent-name>[all_farmers]</parent-name>
+            <remote-alias>sex</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>2147483647</width>
+            <contains-null>true</contains-null>
+            <cast-to-local-type>true</cast-to-local-type>
+            <collation flag='0' name='LEN_RUS' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[all_farmers (organic_africa.all_farmers)_E9A2C36ADC9A4114A32346242F275A82]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>id_number</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[id_number]</local-name>
+            <parent-name>[all_farmers]</parent-name>
+            <remote-alias>id_number</remote-alias>
+            <ordinal>13</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>2147483647</width>
+            <contains-null>true</contains-null>
+            <cast-to-local-type>true</cast-to-local-type>
+            <collation flag='0' name='LEN_RUS' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[all_farmers (organic_africa.all_farmers)_E9A2C36ADC9A4114A32346242F275A82]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>date_of_birth</remote-name>
+            <remote-type>135</remote-type>
+            <local-name>[date_of_birth]</local-name>
+            <parent-name>[all_farmers]</parent-name>
+            <remote-alias>date_of_birth</remote-alias>
+            <ordinal>14</ordinal>
+            <local-type>datetime</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[all_farmers (organic_africa.all_farmers)_E9A2C36ADC9A4114A32346242F275A82]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>date_contracted</remote-name>
+            <remote-type>135</remote-type>
+            <local-name>[date_contracted]</local-name>
+            <parent-name>[all_farmers]</parent-name>
+            <remote-alias>date_contracted</remote-alias>
+            <ordinal>15</ordinal>
+            <local-type>datetime</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[all_farmers (organic_africa.all_farmers)_E9A2C36ADC9A4114A32346242F275A82]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>date_dropped_out</remote-name>
+            <remote-type>135</remote-type>
+            <local-name>[date_dropped_out]</local-name>
+            <parent-name>[all_farmers]</parent-name>
+            <remote-alias>date_dropped_out</remote-alias>
+            <ordinal>16</ordinal>
+            <local-type>datetime</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[all_farmers (organic_africa.all_farmers)_E9A2C36ADC9A4114A32346242F275A82]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>reason_dropped_out</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[reason_dropped_out]</local-name>
+            <parent-name>[all_farmers]</parent-name>
+            <remote-alias>reason_dropped_out</remote-alias>
+            <ordinal>17</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>2147483647</width>
+            <contains-null>true</contains-null>
+            <cast-to-local-type>true</cast-to-local-type>
+            <collation flag='0' name='LEN_RUS' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[all_farmers (organic_africa.all_farmers)_E9A2C36ADC9A4114A32346242F275A82]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>address</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[address]</local-name>
+            <parent-name>[all_farmers]</parent-name>
+            <remote-alias>address</remote-alias>
+            <ordinal>18</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>2147483647</width>
+            <contains-null>true</contains-null>
+            <cast-to-local-type>true</cast-to-local-type>
+            <collation flag='0' name='LEN_RUS' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[all_farmers (organic_africa.all_farmers)_E9A2C36ADC9A4114A32346242F275A82]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>organic_status</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[organic_status]</local-name>
+            <parent-name>[all_farmers]</parent-name>
+            <remote-alias>organic_status</remote-alias>
+            <ordinal>19</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>2147483647</width>
+            <contains-null>true</contains-null>
+            <cast-to-local-type>true</cast-to-local-type>
+            <collation flag='0' name='LEN_RUS' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[all_farmers (organic_africa.all_farmers)_E9A2C36ADC9A4114A32346242F275A82]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>organic_status_from_date</remote-name>
+            <remote-type>135</remote-type>
+            <local-name>[organic_status_from_date]</local-name>
+            <parent-name>[all_farmers]</parent-name>
+            <remote-alias>organic_status_from_date</remote-alias>
+            <ordinal>20</ordinal>
+            <local-type>datetime</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[all_farmers (organic_africa.all_farmers)_E9A2C36ADC9A4114A32346242F275A82]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>fairtrade</remote-name>
+            <remote-type>11</remote-type>
+            <local-name>[fairtrade]</local-name>
+            <parent-name>[all_farmers]</parent-name>
+            <remote-alias>fairtrade</remote-alias>
+            <ordinal>21</ordinal>
+            <local-type>boolean</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[all_farmers (organic_africa.all_farmers)_E9A2C36ADC9A4114A32346242F275A82]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ward_nr</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[ward_nr]</local-name>
+            <parent-name>[all_farmers]</parent-name>
+            <remote-alias>ward_nr</remote-alias>
+            <ordinal>22</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>17</precision>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[all_farmers (organic_africa.all_farmers)_E9A2C36ADC9A4114A32346242F275A82]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>wc_nr</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[wc_nr]</local-name>
+            <parent-name>[all_farmers]</parent-name>
+            <remote-alias>wc_nr</remote-alias>
+            <ordinal>23</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>17</precision>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[all_farmers (organic_africa.all_farmers)_E9A2C36ADC9A4114A32346242F275A82]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>wc_code</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[wc_code]</local-name>
+            <parent-name>[all_farmers]</parent-name>
+            <remote-alias>wc_code</remote-alias>
+            <ordinal>24</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>2147483647</width>
+            <contains-null>true</contains-null>
+            <cast-to-local-type>true</cast-to-local-type>
+            <collation flag='0' name='LEN_RUS' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[all_farmers (organic_africa.all_farmers)_E9A2C36ADC9A4114A32346242F275A82]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>contract_duration</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[contract_duration]</local-name>
+            <parent-name>[all_farmers]</parent-name>
+            <remote-alias>contract_duration</remote-alias>
+            <ordinal>25</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>19</precision>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[all_farmers (organic_africa.all_farmers)_E9A2C36ADC9A4114A32346242F275A82]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>age_at_date_contracted</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[age_at_date_contracted]</local-name>
+            <parent-name>[all_farmers]</parent-name>
+            <remote-alias>age_at_date_contracted</remote-alias>
+            <ordinal>26</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>17</precision>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[all_farmers (organic_africa.all_farmers)_E9A2C36ADC9A4114A32346242F275A82]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column datatype='string' name='[Reason Dropped Out (group)]' role='dimension' type='nominal'>
+        <calculation class='categorical-bin' column='[reason_dropped_out]' new-bin='true'>
+          <bin default-name='false' value='&quot;high risk&quot;'>
+            <value>&quot;high contamination risk&quot;</value>
+            <value>&quot;high risk&quot;</value>
+          </bin>
+          <bin default-name='false' value='&quot;insufficient production&quot;'>
+            <value>&quot;insufficient production&quot;</value>
+            <value>&quot;insufficient production 2015&quot;</value>
+            <value>&quot;no production 2016&quot;</value>
+          </bin>
+          <bin default-name='false' value='&quot;not inspected&quot;'>
+            <value>&quot;not externally inspected&quot;</value>
+            <value>&quot;not inspected&quot;</value>
+          </bin>
+        </calculation>
+      </column>
+      <_.fcp.ObjectModelTableType.true...column caption='all_farmers' datatype='table' name='[__tableau_internal_object_id__].[all_farmers (organic_africa.all_farmers)_E9A2C36ADC9A4114A32346242F275A82]' role='measure' type='quantitative' />
+      <column caption='Address' datatype='string' name='[address]' role='dimension' type='nominal' />
+      <column caption='Area' datatype='string' name='[area]' role='dimension' type='nominal' />
+      <column caption='Date Contracted' datatype='datetime' name='[date_contracted]' role='dimension' type='ordinal' />
+      <column caption='Date Dropped Out' datatype='datetime' name='[date_dropped_out]' role='dimension' type='ordinal' />
+      <column caption='Date Of Birth' datatype='datetime' name='[date_of_birth]' role='dimension' type='ordinal' />
+      <column caption='Fairtrade' datatype='boolean' name='[fairtrade]' role='dimension' type='nominal' />
+      <column caption='First Names' datatype='string' name='[first_names]' role='dimension' type='nominal' />
+      <column caption='Id' datatype='integer' name='[id]' role='dimension' type='ordinal' />
+      <column caption='Id Number' datatype='string' name='[id_number]' role='dimension' type='nominal' />
+      <column caption='Og Code' datatype='string' name='[og_code]' role='dimension' type='nominal' />
+      <column caption='Og Nr' datatype='real' name='[og_nr]' role='measure' type='quantitative' />
+      <column caption='Organic Status' datatype='string' name='[organic_status]' role='dimension' type='nominal' />
+      <column aggregation='Count' caption='Organic Status From Date' datatype='datetime' name='[organic_status_from_date]' role='dimension' type='ordinal' />
+      <column caption='Production Unit' datatype='string' name='[production_unit]' role='dimension' type='nominal' />
+      <column caption='Reason Dropped Out' datatype='string' name='[reason_dropped_out]' role='dimension' type='nominal' />
+      <column caption='Sex' datatype='string' name='[sex]' role='dimension' type='nominal' />
+      <column caption='Species' datatype='string' name='[species]' role='dimension' type='nominal' />
+      <column caption='Surname' datatype='string' name='[surname]' role='dimension' type='nominal' />
+      <column caption='Ward Nr/Name' datatype='string' name='[ward_nr/name]' role='dimension' type='nominal' />
+      <column caption='Ward Nr' datatype='real' name='[ward_nr]' role='measure' type='quantitative' />
+      <column caption='Wc Code' datatype='string' name='[wc_code]' role='dimension' type='nominal' />
+      <column caption='Wc Nr' datatype='real' name='[wc_nr]' role='measure' type='quantitative' />
+      <column-instance column='[reason_dropped_out]' derivation='None' name='[none:reason_dropped_out:nk]' pivot='key' type='nominal' />
+      <layout _.fcp.SchemaViewerObjectModel.false...dim-percentage='0.5' _.fcp.SchemaViewerObjectModel.false...measure-percentage='0.4' dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[none:reason_dropped_out:nk]' type='palette'>
+            <map to='#499894'>
+              <bucket>&quot;insufficient documentation&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;own choice&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;transfer to another db&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;collection in banana plants&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;duplicate&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;not externally inspected&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;area closed&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;two outgrowers in family&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;insufficient production&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;high risk&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;health reasons&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>%null%</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;insufficient buffer zone&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;not inspected&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;no production 2016&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;deceased&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;high contamination risk&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;insufficient production 2015&quot;</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+      <date-options start-of-week='monday' />
+      <_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+        <objects>
+          <object caption='all_farmers' id='all_farmers (organic_africa.all_farmers)_E9A2C36ADC9A4114A32346242F275A82'>
+            <properties context=''>
+              <relation connection='postgres.0y2jo0h0cn1m8n1ab2vc51v85jpz' name='all_farmers' table='[organic_africa].[all_farmers]' type='table' />
+            </properties>
+          </object>
+        </objects>
+      </_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name='Sheet 1'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='all_farmers (organic_africa.all_farmers) (postgres)' name='federated.10movex0dfbz3911rx0os1f1suf4' />
+          </datasources>
+          <datasource-dependencies datasource='federated.10movex0dfbz3911rx0os1f1suf4'>
+            <column-instance column='[contract_duration]' derivation='Count' name='[cnt:contract_duration:qk]' pivot='key' type='quantitative' />
+            <column datatype='integer' name='[contract_duration]' role='measure' type='quantitative' />
+            <column caption='Og Nr' datatype='real' name='[og_nr]' role='measure' type='quantitative' />
+            <column-instance column='[og_nr]' derivation='Sum' name='[sum:og_nr:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[wc_nr]' derivation='Sum' name='[sum:wc_nr:qk]' pivot='key' type='quantitative' />
+            <column caption='Wc Nr' datatype='real' name='[wc_nr]' role='measure' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.10movex0dfbz3911rx0os1f1suf4].[:Measure Names]'>
+            <groupfilter function='union' user:op='manual'>
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.10movex0dfbz3911rx0os1f1suf4].[sum:og_nr:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.10movex0dfbz3911rx0os1f1suf4].[sum:wc_nr:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.10movex0dfbz3911rx0os1f1suf4].[cnt:contract_duration:qk]&quot;' />
+            </groupfilter>
+          </filter>
+          <slices>
+            <column>[federated.10movex0dfbz3911rx0os1f1suf4].[:Measure Names]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+          </pane>
+        </panes>
+        <rows>[federated.10movex0dfbz3911rx0os1f1suf4].[:Measure Names]</rows>
+        <cols>[federated.10movex0dfbz3911rx0os1f1suf4].[Multiple Values]</cols>
+      </table>
+      <simple-id uuid='{3BA68A8A-29FD-4ABD-B7DD-C04B5B0FCC2D}' />
+    </worksheet>
+    <worksheet name='Sheet 2'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='all_farmers (organic_africa.all_farmers) (postgres)' name='federated.10movex0dfbz3911rx0os1f1suf4' />
+          </datasources>
+          <datasource-dependencies datasource='federated.10movex0dfbz3911rx0os1f1suf4'>
+            <_.fcp.ObjectModelTableType.true...column caption='all_farmers' datatype='table' name='[__tableau_internal_object_id__].[all_farmers (organic_africa.all_farmers)_E9A2C36ADC9A4114A32346242F275A82]' role='measure' type='quantitative' />
+            <column-instance column='[__tableau_internal_object_id__].[all_farmers (organic_africa.all_farmers)_E9A2C36ADC9A4114A32346242F275A82]' derivation='Count' name='[__tableau_internal_object_id__].[cnt:all_farmers (organic_africa.all_farmers)_E9A2C36ADC9A4114A32346242F275A82:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[reason_dropped_out]' derivation='Count' name='[cnt:reason_dropped_out:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[reason_dropped_out]' derivation='None' name='[none:reason_dropped_out:nk]' pivot='key' type='nominal' />
+            <column caption='Reason Dropped Out' datatype='string' name='[reason_dropped_out]' role='dimension' type='nominal' />
+            <_.fcp.ObjectModelTableType.false...column caption='all_farmers' datatype='integer' name='[__tableau_internal_object_id__].[all_farmers (organic_africa.all_farmers)_E9A2C36ADC9A4114A32346242F275A82]' role='measure' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.10movex0dfbz3911rx0os1f1suf4].[:Measure Names]'>
+            <groupfilter function='union' user:op='manual'>
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.10movex0dfbz3911rx0os1f1suf4].[cnt:reason_dropped_out:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.10movex0dfbz3911rx0os1f1suf4].[__tableau_internal_object_id__].[cnt:all_farmers (organic_africa.all_farmers)_E9A2C36ADC9A4114A32346242F275A82:qk]&quot;' />
+            </groupfilter>
+          </filter>
+          <manual-sort column='[federated.10movex0dfbz3911rx0os1f1suf4].[none:reason_dropped_out:nk]' direction='ASC'>
+            <dictionary>
+              <bucket>&quot;own choice&quot;</bucket>
+              <bucket>&quot;area closed&quot;</bucket>
+              <bucket>&quot;no production 2016&quot;</bucket>
+              <bucket>&quot;insufficient production 2015&quot;</bucket>
+              <bucket>&quot;transfer to another db&quot;</bucket>
+              <bucket>&quot;not externally inspected&quot;</bucket>
+              <bucket>&quot;insufficient production&quot;</bucket>
+              <bucket>&quot;not inspected&quot;</bucket>
+              <bucket>&quot;insufficient documentation&quot;</bucket>
+              <bucket>&quot;duplicate&quot;</bucket>
+              <bucket>&quot;insufficient buffer zone&quot;</bucket>
+              <bucket>&quot;high contamination risk&quot;</bucket>
+              <bucket>&quot;collection in banana plants&quot;</bucket>
+              <bucket>&quot;high risk&quot;</bucket>
+              <bucket>&quot;health reasons&quot;</bucket>
+              <bucket>&quot;deceased&quot;</bucket>
+              <bucket>&quot;two outgrowers in family&quot;</bucket>
+              <bucket>%null%</bucket>
+              <bucket>%all%</bucket>
+            </dictionary>
+          </manual-sort>
+          <slices>
+            <column>[federated.10movex0dfbz3911rx0os1f1suf4].[:Measure Names]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='header'>
+            <format attr='width' field='[federated.10movex0dfbz3911rx0os1f1suf4].[none:reason_dropped_out:nk]' value='268' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <text column='[federated.10movex0dfbz3911rx0os1f1suf4].[Multiple Values]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.10movex0dfbz3911rx0os1f1suf4].[none:reason_dropped_out:nk]</rows>
+        <cols>[federated.10movex0dfbz3911rx0os1f1suf4].[:Measure Names]</cols>
+      </table>
+      <simple-id uuid='{4652EDCA-3F5B-465B-9680-B00370EC6C6C}' />
+    </worksheet>
+  </worksheets>
+  <windows source-height='30'>
+    <window class='worksheet' name='Sheet 1'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+            <card type='measures' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{A80FC67E-F9F5-444D-94FA-84CE0BD41195}' />
+    </window>
+    <window class='worksheet' maximized='true' name='Sheet 2'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+            <card type='measures' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{3C479A0E-C23B-4397-9714-B41EFDE54417}' />
+    </window>
+  </windows>
+</workbook>
