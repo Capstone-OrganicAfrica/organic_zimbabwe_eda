@@ -1,0 +1,457 @@
+
+-------Table copy
+CREATE TABLE "OG_Insp_2020__OGOrg_1"  AS
+TABLE "OG_Insp_2020__OGOrg";
+
+
+------------------  gender_text  
+ALTER TABLE "OG_Insp_2020__OGOrg_1"
+ADD COLUMN gender_text TEXT;
+
+UPDATE "OG_Insp_2020__OGOrg_1"
+SET gender_text = (
+    CASE "OG_Insp_2020__OGOrg_1"."Sex"
+        WHEN 1 THEN 'male'
+        WHEN 2 THEN 'female'
+    END
+);
+
+ALTER TABLE  "OG_Insp_2020__OGOrg_1"
+DROP COLUMN "Sex";
+
+------------ household_head
+ALTER TABLE "OG_Insp_2020__OGOrg_1"
+ADD COLUMN "household_head" TEXT;
+
+
+
+UPDATE "OG_Insp_2020__OGOrg_1"
+SET "household_head" = (
+    CASE "OG_Insp_2020__OGOrg_1"."Household_head"
+        WHEN 1 THEN 'husband'
+        WHEN 2 THEN 'wife'
+        WHEN 3 THEN 'mother'
+        WHEN 4 THEN 'father'
+        WHEN 5 THEN 'grandmother'
+        WHEN 6 THEN 'grandfather'
+        WHEN 7 THEN 'nephew'
+        WHEN 8 THEN 'niece'
+        WHEN 9 THEN 'son in law'
+        WHEN 10 THEN 'daughter in law'
+        WHEN 11 THEN 'self'
+        WHEN 12 THEN 'son'
+        WHEN 13 THEN 'daughter'
+        END
+);  
+
+ALTER TABLE "OG_Insp_2020__OGOrg_1"
+DROP COLUMN "Household_head";
+
+-------------------marital_status
+
+
+ALTER TABLE "OG_Insp_2020__OGOrg_1"
+ADD COLUMN "marital_status" TEXT;
+
+ UPDATE "OG_Insp_2020__OGOrg_1"
+ SET "marital_status" = (
+    CASE "OG_Insp_2020__OGOrg_1"."Marital_status"
+        WHEN 2 THEN 'married'
+        WHEN 3 THEN 'single'
+        WHEN 4 THEN 'divorced'
+        WHEN 5 THEN 'widowed'
+        WHEN 6 THEN 'divorced'
+    END
+);
+
+ALTER TABLE "OG_Insp_2020__OGOrg_1"
+DROP COLUMN "Marital_status";
+
+-------------------
+
+
+UPDATE "OG_Insp_2020__OGOrg_1"
+SET "last_quarter_food_expenditure" = CASE WHEN "last_quarter_food_expenditure" = '100 rtgs' THEN '7' ELSE "last_quarter_food_expenditure" END;
+
+UPDATE "OG_Insp_2020__OGOrg_1"
+SET "Health__care_expenditure" = (FLOOR(REGEXP_REPLACE("Health__care_expenditure", '[^0-9]', '', 'g')::FLOAT / 13))::TEXT
+WHERE "Health__care_expenditure" LIKE '%RTGS%';
+
+
+UPDATE "OG_Insp_2020__OGOrg_1"
+SET "Health__care_expenditure" = 
+  CASE 
+    WHEN "Health__care_expenditure" = 'none' THEN '0' 
+    ELSE REPLACE(REPLACE("Health__care_expenditure", '$', ''), 'USD', '') 
+  END;
+ 
+------------------------------------
+
+----------------- replacinng km and calculating km from Metars 
+
+ALTER TABLE "OG_Insp_2020__OGOrg_1"
+ADD COLUMN "nearest_clinic" float;
+
+
+UPDATE "OG_Insp_2020__OGOrg_1"
+SET "nearest_clinic" = CASE
+        WHEN "Distance_from_nearest_clinic" = '' THEN 0
+        WHEN "Distance_from_nearest_clinic" = 'none' THEN 0
+        WHEN POSITION('km' IN "Distance_from_nearest_clinic") > 0 THEN CAST(REGEXP_REPLACE("Distance_from_nearest_clinic", '[^0-9.]', '', 'g') AS NUMERIC)
+        WHEN POSITION('klm' IN "Distance_from_nearest_clinic") > 0 THEN CAST(REGEXP_REPLACE("Distance_from_nearest_clinic", '[^0-9.]', '', 'g') AS NUMERIC)
+        WHEN POSITION('m' IN "Distance_from_nearest_clinic") > 0 THEN CAST(REGEXP_REPLACE("Distance_from_nearest_clinic", '[^0-9.]', '', 'g') AS NUMERIC) / 1000
+        ELSE 0
+    END;
+
+ALTER TABLE "OG_Insp_2020__OGOrg_1"
+DROP COLUMN "Distance_from_nearest_School";
+
+ 
+ ------------replacinng km and calculating km from Metars 
+
+ALTER TABLE "OG_Insp_2020__OGOrg_1"
+ADD COLUMN "nearest_school" float;
+
+UPDATE "OG_Insp_2020__OGOrg_1"
+SET "nearest_school" = CASE
+        WHEN "Distance_from_nearest_School" = '' THEN 0
+        WHEN "Distance_from_nearest_School" = 'none' THEN 0
+        WHEN POSITION('km' IN "Distance_from_nearest_School") > 0 THEN CAST(REGEXP_REPLACE("Distance_from_nearest_School", '[^0-9.]', '', 'g') AS NUMERIC)
+        WHEN POSITION('klm' IN "Distance_from_nearest_School") > 0 THEN CAST(REGEXP_REPLACE("Distance_from_nearest_School", '[^0-9.]', '', 'g') AS NUMERIC)
+        WHEN POSITION('m' IN "Distance_from_nearest_School") > 0 THEN CAST(REGEXP_REPLACE("Distance_from_nearest_School", '[^0-9.]', '', 'g') AS NUMERIC) / 1000
+        ELSE 0
+    END;
+
+ALTER TABLE "OG_Insp_2020__OGOrg_1"
+DROP COLUMN "Distance_from_nearest_Shops";
+
+
+ 
+ -----------------------   
+
+UPDATE "OG_Insp_2020__OGOrg_1"
+SET "nearest_School" = CASE
+        WHEN "Distance_from_nearest_School" = '' THEN 0
+        WHEN "Distance_from_nearest_School" = 'none' THEN 0
+        WHEN POSITION('km' IN "Distance_from_nearest_School") > 0 THEN CAST(REGEXP_REPLACE("Distance_from_nearest_School", '[^0-9.]', '', 'g') AS NUMERIC)
+        WHEN POSITION('klm' IN "Distance_from_nearest_School") > 0 THEN CAST(REGEXP_REPLACE("Distance_from_nearest_School", '[^0-9.]', '', 'g') AS NUMERIC)
+        WHEN POSITION('m' IN "Distance_from_nearest_School") > 0 THEN CAST(REGEXP_REPLACE("Distance_from_nearest_School", '[^0-9.]', '', 'g') AS NUMERIC) / 1000
+        ELSE 0
+    END;
+
+ALTER TABLE "OG_Insp_2020__OGOrg_1"
+DROP COLUMN "Distance_from_nearest_School";
+
+
+ ---------------------code for messing up delete completly 
+
+
+UPDATE "OG_Insp_2020__OGOrg_1"
+SET "Distance_from_nearest_School" = "OG_Insp_2020__OGOrg"."Distance_from_nearest_School"
+FROM "OG_Insp_2020__OGOrg"
+WHERE "OG_Insp_2020__OGOrg_1"."ID" = "OG_Insp_2020__OGOrg"."ID";
+
+-------------------------
+
+-----------------------"Electricity"
+
+ALTER TABLE "OG_Insp_2020__OGOrg_1"
+ALTER COLUMN "Electricity" TYPE text;
+
+
+ UPDATE "OG_Insp_2020__OGOrg_1"
+ SET "Electricity" = CASE
+                              --WHEN "Enough_cereal_2018" = '1' THEN 'yes'
+                              WHEN "Electricity" = '1' THEN 'yes'
+                              WHEN "Electricity" = '2' THEN 'yes'
+                              WHEN "Electricity" = '0' THEN 'no'
+
+                              ELSE "Electricity"
+                            END;
+
+
+
+-----------------Enough_cereal_2015,2016,2017
+
+ALTER TABLE "OG_Insp_2020__OGOrg_1"
+ALTER COLUMN "Enough_cereal_2016" TYPE text;
+
+
+                           
+                           
+                           
+UPDATE "OG_Insp_2020__OGOrg_1"
+SET "Enough_cereal_2019" = CASE
+                              WHEN "Enough_cereal_2019" = '1' THEN 'yes'
+                              WHEN "Enough_cereal_2019" = '2' THEN 'no'
+                              ELSE "Enough_cereal_2019" END;
+      
+
+
+
+
+-----------water pump 
+                             
+     UPDATE "OG_Insp_2020__OGOrg_1"
+     SET "Water_pump_type" = CASE
+                              WHEN "Water_pump_type" = '1' THEN 'Electrical'
+                              WHEN "Water_pump_type" = '2' THEN 'Hand pump'
+                              WHEN "Water_pump_type" = '3' THEN 'Treddle'
+                              WHEN "Water_pump_type" = '4' THEN 'petrol/diesel'
+                              WHEN "Water_pump_type" = '5' THEN 'Solar'
+                              WHEN "Water_pump_type" = '6' THEN 'none'
+                              WHEN "Water_pump_type" = '7' THEN 'Unasweredr'
+                              ELSE "Water_pump_type"
+                              END;
+                             
+------------------Availabilty_of_HH_latrine
+
+    UPDATE "OG_Insp_2020__OGOrg_1"
+    SET "Availabilty_of_HH_latrine" = (
+    CASE "OG_Insp_2020__OGOrg_1"."Availabilty_of_HH_latrine"
+        WHEN '1' THEN 'Yes'
+        WHEN '2' THEN 'No'
+        END);
+       
+                             
+ --------------- latrine type 
+ 
+    UPDATE "OG_Insp_2020__OGOrg_1"
+    SET "Latrine_Type" = (
+    CASE "OG_Insp_2020__OGOrg_1"."Latrine_Type"
+        WHEN '1' THEN 'No'
+        WHEN '2' THEN 'BVIP'
+        --WHEN '3' THEN 'Dam'
+        WHEN '3' THEN 'Pit'
+        WHEN '4' THEN 'Flush'
+        WHEN '5' THEN 'Other'
+        WHEN '6' THEN 'unanswered'
+        --WHEN 8 THEN 'Spring '
+        --WHEN 9 THEN 'No irrigation'
+        --WHEN 10 THEN 'Closed well'
+        --WHEN 11 THEN 'irrigated water ways'
+       -- WHEN 12 THEN 'wild animal damages'
+        --WHEN 13 THEN 1000
+        --WHEN 14 THEN 0
+        END
+);
+
+
+--------------------Main_livelihood_activity
+
+
+       UPDATE "OG_Insp_2020__OGOrg_1"
+SET "Main_livelihood_activity" = (
+    CASE "OG_Insp_2020__OGOrg_1"."Main_livelihood_activity"
+        WHEN '1' THEN 'Dry land farming'
+        WHEN '2' THEN 'Irrigated farming'
+        WHEN '3' THEN 'Gardening'
+        WHEN '4' THEN 'formal employment'
+        WHEN '5' THEN 'Small business'
+        WHEN '6' THEN 'Organic or  Mabagrown farming'
+        WHEN '7' THEN 'Livestock breeding'
+        WHEN '8' THEN 'none'
+        --WHEN 9 THEN 'no children'
+        --WHEN 10 THEN 'Covid'
+        ---WHEN 11 THEN 'Ill/sick'
+       --- WHEN 12 THEN 'son'
+       --- WHEN 13 THEN 'daughter'
+        END
+);
+
+--------------
+--------------------Main_source_of_HH_water
+
+
+UPDATE "OG_Insp_2020__OGOrg_1"
+SET "Main_source_of_HH_water" = (
+    CASE "OG_Insp_2020__OGOrg_1"."Main_source_of_HH_water"
+        WHEN '1' THEN 'Borehole'
+        WHEN '2' THEN 'Open well'
+        WHEN '3' THEN 'Dam'
+        WHEN '4' THEN 'Stream or river'
+        WHEN '5' THEN 'Other'
+        WHEN '6' THEN 'Unanswered'
+        WHEN '7' THEN 'Municipal'
+        WHEN '8' THEN 'Spring'
+        WHEN '9' THEN 'No irrigation'
+        WHEN '10' THEN 'Closed well'
+        WHEN '11' THEN 'irrigated water ways'
+       -- WHEN 12 THEN 'wild animal damages'
+        --WHEN 13 THEN 1000
+        --WHEN 14 THEN 0
+        END
+);
+
+   -------------------HH_education_level
+
+
+
+UPDATE "OG_Insp_2020__OGOrg_1"
+SET "HH_education_level" = (
+    CASE "OG_Insp_2020__OGOrg_1"."HH_education_level"
+        WHEN '1' THEN 'Pre-school'
+        WHEN '2' THEN 'Early childhood development'
+        WHEN '3' THEN 'Primary school'
+        WHEN '4' THEN 'Ordinary level'
+        WHEN '5' THEN 'Tertiary or vocational'
+        WHEN '6' THEN 'None'
+        WHEN '7' THEN 'Standard 1'
+        WHEN '8' THEN 'Standard 3'
+        WHEN '9' THEN 'Advanced level'
+        WHEN '10' THEN 'Zimbabwe Junior certificate'
+        ---WHEN 11 THEN 'self'
+       --- WHEN 12 THEN 'son'
+       --- WHEN 13 THEN 'daughter'
+        END
+);
+
+
+--------------------Reason_for_not_attending
+
+
+ALTER TABLE "OG_Insp_2020__OGOrg_1"
+ALTER COLUMN "Reason_for_not_attending" TYPE text;
+    
+
+
+
+UPDATE "OG_Insp_2020__OGOrg_1"
+SET "Reason_for_not_attending" = (
+    CASE "OG_Insp_2020__OGOrg_1"."Reason_for_not_attending"
+        WHEN '1' THEN 'Financial'
+        WHEN '2' THEN 'Distance'
+        WHEN '3' THEN 'Disability'
+        WHEN '4' THEN 'under age'
+        WHEN '5' THEN 'early marriage'
+        WHEN '6' THEN 'None'
+        WHEN '7' THEN 'no interest'
+        WHEN '8' THEN 'under age'
+        WHEN '9' THEN 'no children'
+        WHEN '10' THEN 'Covid'
+        WHEN '11' THEN 'Ill/sick'
+       --- WHEN 12 THEN 'son'
+       --- WHEN 13 THEN 'daughter'
+        END
+);
+
+------------------Insufficient_cereal_reason_2,1,3
+
+UPDATE "OG_Insp_2020__OGOrg_1"
+SET "Insufficient_cereal_reason_3" = (
+    CASE "OG_Insp_2020__OGOrg_1"."Insufficient_cereal_reason_3"
+        WHEN '1' THEN 'Non affordability of fertilizer'
+        WHEN '2' THEN 'Non Availability of fertilizer'
+        WHEN '3' THEN 'Non Availability of Seed'
+        WHEN '4' THEN 'Non Affordability of Seed'
+        WHEN '5' THEN 'Poor Rainfall'
+        WHEN '6' THEN 'Shortage of labour'
+        WHEN '7' THEN 'Lack of Draught power'
+        WHEN '8' THEN 'Not enough land'
+        WHEN '9' THEN 'Natural disaster'
+        WHEN '10' THEN 'n/a'
+        WHEN '11' THEN 'not answered'
+        WHEN '12' THEN 'wild animal damages'
+        --WHEN 13 THEN 1000
+        --WHEN 14 THEN 0
+        END
+);
+
+
+--------------------------Source_of_irrigation_water
+UPDATE "OG_Insp_2020__OGOrg_1"
+SET "Source_of_irrigation_water" = (
+    CASE "OG_Insp_2020__OGOrg_1"."Source_of_irrigation_water"
+        WHEN '1' THEN 'Borehole'
+        WHEN '2' THEN 'Open well'
+        WHEN '3' THEN 'Dam'
+        WHEN '4' THEN 'Stream or river'
+        WHEN '5' THEN 'Other'
+        WHEN '6' THEN 'Unanswered'
+        WHEN '7' THEN 'Municipal'
+        WHEN '8' THEN 'Spring'
+        WHEN '9' THEN 'No irrigation'
+        WHEN '10' THEN 'Closed well'
+        WHEN '11' THEN 'irrigated water ways'
+       -- WHEN 12 THEN 'wild animal damages'
+        --WHEN 13 THEN 1000
+        --WHEN 14 THEN 0
+        END
+);
+
+
+
+---------------------
+
+UPDATE "OG_Insp_2020__OGOrg_1"
+SET "Type_of_stove" = (
+    CASE "OG_Insp_2020__OGOrg_1"."Type_of_stove"
+        WHEN '1' THEN 'Electricity'
+        WHEN '2' THEN 'Gas'
+        WHEN '3' THEN 'Paraffin'
+        WHEN '4' THEN 'Charcoal'
+        WHEN '5' THEN 'Firewood'
+        WHEN '6' THEN 'Dung'
+        WHEN '7' THEN 'unanswered'
+        --WHEN 8 THEN 'Not enough land'
+        --WHEN 9 THEN 'Natural disaster'
+       -- WHEN 10 THEN 'n/a'
+        --WHEN 11 THEN 'not answered'
+       -- WHEN 12 THEN 'wild animal damages'
+        --WHEN 13 THEN 1000
+        --WHEN 14 THEN 0
+        END
+);
+
+
+
+-------------------
+
+
+UPDATE "OG_Insp_2020__OGOrg_1"
+SET "Health_of_Farmer" = CASE
+                              --WHEN "Enough_cereal_2018" = '1' THEN 'yes'
+                              WHEN "Health_of_Farmer" = '1' THEN 'Good'
+                              WHEN "Health_of_Farmer" = '2' THEN 'Unwell'
+                              WHEN "Health_of_Farmer" = '3' THEN 'Unwell'
+                              ELSE "Health_of_Farmer"
+                            END;
+                           
+             ----------------------
+             
+ ---------------------droping 
+
+
+
+
+
+
+
+ALTER TABLE "OG_Insp_2020__OGOrg_1"
+DROP COLUMN "Corrective_action_implemented";
+
+
+ALTER TABLE "OG_Insp_2020__OGOrg_1"
+DROP COLUMN "Items_not_checked";
+
+ALTER TABLE "OG_Insp_2020__OGOrg_1"
+DROP COLUMN "Alternative_Cereal_3";
+
+ALTER TABLE "OG_Insp_2020__OGOrg_1"
+DROP COLUMN "Alternative_Cereal_2";
+
+ALTER TABLE "OG_Insp_2020__OGOrg_1"
+DROP COLUMN "Additional_sanctions_ICS";
+
+
+ALTER TABLE "OG_Insp_2020__OGOrg_1"
+DROP COLUMN "Additional_sanctions_ICS";
+
+
+ALTER TABLE "OG_Insp_2020__OGOrg_1"
+DROP COLUMN "Overall_comment";
+
+
+ALTER TABLE "OG_Insp_2020__OGOrg_1"
+DROP COLUMN "Entered_by";
+
