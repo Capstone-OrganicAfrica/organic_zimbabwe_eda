@@ -1,6 +1,6 @@
 import pandas as pd
 import sqlalchemy 
-import cleaning_data_py.sql_functions as sf
+import sql_functions as sf
 
 
 # %%
@@ -104,8 +104,8 @@ display(concatenated_df)
 # we need psycopg2 for raising possible error message
 import psycopg2
 import sqlalchemy
-from cleaning_data_py.sql_functions import sqlalchemy
-from cleaning_data_py.sql_functions import get_engine
+from sql_functions import sqlalchemy
+from sql_functions import get_engine
 # Write records stored in a dataframe to SQL database
 engine = get_engine()
 table_name = 'all_insp_2019'
