@@ -15,7 +15,8 @@ We employed a combination of descriptive statistics, and data visualization to a
 - `data`: Contains the raw and processed datasets used in the analysis.
 - `notebooks`: Contains Jupyter notebooks with detailed explanations of the analysis steps and results.
 - `sql`:Includes SQL scripts used for data cleaning and analysis.
-- `tableau`: Includes dashboards.
+- `tableau`[Link to TableauPublic](https://public.tableau.com/app/profile/organicfarming): Includes dashboards.
+
 
 ## Results and Visualizations
 ### The analysis revealed several important insights:
